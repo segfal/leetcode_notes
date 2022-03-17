@@ -31,3 +31,31 @@ def longest_palindrome(x):
 
 i = longest_palindrome("BABAD")
 print(i)
+
+
+
+
+
+
+
+
+'''
+Credit for explanation - https://leetcode.com/problems/longest-palindromic-substring/discuss/2921/Share-my-Java-solution-using-dynamic-programming/264539
+
+
+A little explanation for why the indices in the for loops are set the way they are (I was really confused for a long time):
+
+j must be greater than or equal i at all times. Why?
+i is the start index of the substring, 
+j is the end index of the substring. 
+It makes no sense for i to be greater than j. Visualization helps me, so if you visualize the dp 2d array, think of a diagonal that cuts from top left to bottom right. 
+We are only filling the top right half of dp.
+
+Why are we counting down for i, but counting up for j? 
+Each sub-problem dp[i][j] depends on dp[i+1][j-1] (dp[i+1][j-1] must be true and s.charAt(i) must equal s.charAt(j) for dp[i][j] to be true).
+
+
+
+
+
+'''
